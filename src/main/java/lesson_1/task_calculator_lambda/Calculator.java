@@ -47,8 +47,6 @@ public class Calculator {
             }
         }
 
-        System.out.println(a + " " + operationSign + " " + b);
-
         if (operationSign.equals("+")) {
 //            Addition
             Operationable operationAdd = ((x, y) -> x + y);
