@@ -1,5 +1,8 @@
 package lesson_1.tasks_two_methods;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class GenMeth {
     //    Home work, task 1
     <T> boolean swap(T[] arr, int i, int j) {
@@ -14,5 +17,12 @@ public class GenMeth {
         arr[j] = temp;
         System.out.println("Swap successful.");
         return true;
+    }
+
+    //    Home work, task 2
+    <T> ArrayList<T> asArrayList(T[] arr) {
+        ArrayList<T> arrayList = new ArrayList<>();
+        Arrays.stream(arr).forEach(a -> arrayList.add(a));
+        return arrayList;
     }
 }
