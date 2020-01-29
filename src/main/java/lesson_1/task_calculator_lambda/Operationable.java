@@ -1,5 +1,6 @@
 package lesson_1.task_calculator_lambda;
 
-public interface Operationable {
-        float calculate(float x, float y);
+@FunctionalInterface
+public interface Operationable<T> {
+    T calculate(T x, T y);
 }

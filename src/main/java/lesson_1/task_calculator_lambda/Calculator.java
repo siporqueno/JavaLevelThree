@@ -49,12 +49,12 @@ public class Calculator {
 
         if (operationSign.equals("+")) {
 //            Addition
-            Operationable operationAdd = ((x, y) -> x + y);
+            Operationable<Float> operationAdd = ((x, y) -> x + y);
             result = operationAdd.calculate(a, b);
 
         } else {
 //            Subtraction
-            Operationable operationSub = ((x, y) -> x - y);
+            Operationable<Float> operationSub = ((x, y) -> x - y);
             result = operationSub.calculate(a, b);
         }
 
