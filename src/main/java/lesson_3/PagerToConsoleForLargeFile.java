@@ -14,7 +14,7 @@ public class PagerToConsoleForLargeFile {
     private static final long PAGE_SIZE = 1800;
 
     public static void main(String[] args) {
-        System.out.println("The book's title is War and Peace, 4 times. Its author is Leo Tolstoy. It has 720 pages. Have a pleasant reading!");
+        System.out.println("The book's title is War and Peace, 4 times. Its author is Leo Tolstoy. It has 7320 pages. Have a pleasant reading!");
         int pageNumber = -1;
         while (true) {
             char[] arr = new char[1800];
