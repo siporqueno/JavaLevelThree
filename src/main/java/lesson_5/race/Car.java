@@ -1,4 +1,4 @@
-package lesson_5;
+package lesson_5.race;
 
 public class Car implements Runnable {
     private static int CARS_COUNT;

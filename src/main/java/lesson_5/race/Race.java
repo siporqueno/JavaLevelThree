@@ -1,4 +1,4 @@
-package lesson_5;
+package lesson_5.race;
 
 import java.util.ArrayList;
 import java.util.Arrays;
