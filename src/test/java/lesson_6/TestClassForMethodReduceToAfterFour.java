@@ -9,6 +9,7 @@ import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
 
+//    Home work of Lesson 6, task 1
 @RunWith(Parameterized.class)
 public class TestClassForMethodReduceToAfterFour {
     private MethodsForIntArrays methods;
@@ -40,7 +41,7 @@ public class TestClassForMethodReduceToAfterFour {
     }
 
     @Test
-    public void testExceptRunParams() {
+    public void testCasesWithFourParams() {
         Assert.assertArrayEquals(a, methods.reduceToAfterFour(b));
     }
 }
