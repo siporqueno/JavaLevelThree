@@ -1,35 +1,21 @@
 package lesson_7_interview_task;
 
 public class SpiralInMatrix {
-    public static int[][] matrix;
-    public static final int SIZE_X = 5;
+    public static final int SIZE_X = 7;
     public static final int SIZE_Y = 5;
+    public static int[][] matrix = new int[SIZE_Y][SIZE_X];
 
     public static void main(String[] args) {
         SpiralInMatrix sp = new SpiralInMatrix();
-        sp.initMatrix();
-        sp.printMatrix();
         sp.fillInMatrix(SIZE_X, SIZE_Y, matrix);
         sp.printMatrix();
     }
 
-    public void initMatrix() {
-        matrix = new int[SIZE_X][SIZE_X];
-        for (int[] row : matrix) {
-            for (int e : row) e = 0;
-        }
-    }
-
     public void printMatrix() {
         System.out.println("---------");
-        for (int i = 0; i <= SIZE_X; i++) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
         for (int i = 0; i < SIZE_Y; i++) {
-            System.out.print((i + 1) + "|");
             for (int j = 0; j < SIZE_X; j++) {
-                System.out.print(matrix[i][j] + "|");
+                System.out.print(matrix[i][j] + "\t");
             }
             System.out.println();
         }
@@ -38,21 +24,21 @@ public class SpiralInMatrix {
 
     public void fillInMatrix(int sizeX, int sizeY, int[][] matr) {
         final int elemTotalNo = sizeX * sizeY;
+        // current direction
         int dirX = 1;
         int dirY = 0;
         // current position
         int x = 0;
         int y = 0;
-        // plan for next step
+        // plan for the next step
         int xPlan = 0;
         int yPlan = 0;
+        // angle between current direction and X axis
         double angle = 0;
+        // number of filled-in boxes
         int elemNo = 0;
         while (elemNo < elemTotalNo) {
-            elemNo++;
-            matr[yPlan][xPlan] = elemNo;
-            xPlan = x + dirX;
-            yPlan = y + dirY;
+            // Check plan first and change it if necessary (turn right)
             if (xPlan < 0 || sizeX <= xPlan || yPlan < 0 || sizeY <= yPlan || matr[yPlan][xPlan] != 0) {
                 // turn direction (dirX, dirY) right by 90 degrees
                 angle += Math.PI / 2;
@@ -61,8 +47,14 @@ public class SpiralInMatrix {
                 xPlan = x + dirX;
                 yPlan = y + dirY;
             }
-//            elemNo++;
-//            matr[yPlan][xPlan] = elemNo;
+            // Implement the plan: fill-in the box at (x,y)
+            x = xPlan;
+            y = yPlan;
+            elemNo++;
+            matr[yPlan][xPlan] = elemNo;
+            // make a new plan
+            xPlan = x + dirX;
+            yPlan = y + dirY;
         }
     }
 }
