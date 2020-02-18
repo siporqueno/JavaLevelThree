@@ -1,4 +1,4 @@
-package lesson_7;
+package lesson_7.annot;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

@@ -1,4 +1,4 @@
-package lesson_7;
+package lesson_7.annot;
 
 public class FirstTestClass {
     @BeforeSuite
