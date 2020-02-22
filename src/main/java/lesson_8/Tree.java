@@ -5,10 +5,6 @@ import java.util.Comparator;
 public class Tree {
     Node root;
 
-    /*public void insert(int id, int parentId) {
-        insert(id, parentId, root);
-    }*/
-
     public void insert(int id, int parentId, Node subRoot) {
         if (parentId == subRoot.id) {
             subRoot.childs.add(new Node(id));
