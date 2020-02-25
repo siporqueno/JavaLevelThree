@@ -1,12 +1,12 @@
-package lesson_7_interview_task;
+package lesson_7.interview_task;
 
-public class SpiralInMatrix {
+public class SpiralInMatrixWithoutAngleAndWithSinCosFormulas {
     public static final int SIZE_X = 7;
     public static final int SIZE_Y = 5;
     public static int[][] matrix = new int[SIZE_Y][SIZE_X];
 
     public static void main(String[] args) {
-        SpiralInMatrix sp = new SpiralInMatrix();
+        SpiralInMatrixWithoutAngleAndWithSinCosFormulas sp = new SpiralInMatrixWithoutAngleAndWithSinCosFormulas();
         sp.fillInMatrix(SIZE_X, SIZE_Y, matrix);
         sp.printMatrix();
     }
@@ -27,23 +27,26 @@ public class SpiralInMatrix {
         // current direction
         int dirX = 1;
         int dirY = 0;
+        // service variable used to store dirX when changing direction
+        int temp = 0;
         // current position
         int x = 0;
         int y = 0;
         // plan for the next step
         int xPlan = 0;
         int yPlan = 0;
-        // angle between current direction and X axis
-        double angle = 0;
         // number of filled-in boxes
         int elemNo = 0;
         while (elemNo < elemTotalNo) {
             // Check plan first and change it if necessary (turn right)
             if (xPlan < 0 || sizeX <= xPlan || yPlan < 0 || sizeY <= yPlan || matr[yPlan][xPlan] != 0) {
                 // turn direction (dirX, dirY) right by 90 degrees
-                angle += Math.PI / 2;
-                dirX = (int) Math.cos(angle);
-                dirY = (int) Math.sin(angle);
+                temp = dirX;
+                // cos(X+Pi/2)=cosX*cosPi/2-sinX*sinPi/2
+                dirX = -dirY;
+                // sin(X+Pi/2)=sinX*cosPi/2+cosX*sinPi/2
+                dirY = temp;
+
                 xPlan = x + dirX;
                 yPlan = y + dirY;
             }
