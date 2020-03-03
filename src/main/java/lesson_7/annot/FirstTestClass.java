@@ -31,6 +31,16 @@ public class FirstTestClass {
         System.out.println("Inside the method testFour with annotation @Test and priority 7");
     }
 
+    @Test
+    public void testFive() {
+        System.out.println("Inside the method testFive with annotation @Test and priority 5");
+    }
+
+    @Test(Priority.SIX)
+    public void testSix() {
+        System.out.println("Inside the method testSix with annotation @Test and priority 6");
+    }
+
     @AfterSuite
     public void terminate() {
         System.out.println("Inside the method with annotation @AfterSuite");
